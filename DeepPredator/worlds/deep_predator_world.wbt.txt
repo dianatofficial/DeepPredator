@@ -1,0 +1,59 @@
+#VRML_SIM R2023b utf8
+WorldInfo {
+  basicTimeStep 64
+}
+Viewpoint {
+  orientation 0.04 0.94 0.35 1.0
+  position 2.8 1.0 2.9
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation 0 0 0
+  rotation 0 1 0 0
+  children [
+    Solid {
+      translation 0 0.1 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 1
+            }
+          }
+          geometry Box {
+            size 0.1 0.1 0.1
+          }
+        }
+      ]
+    }
+    Motor {
+      name "left_motor"
+    }
+    Motor {
+      name "right_motor"
+    }
+    GPS {
+      name "gps"
+      translation 0 0.05 0
+    }
+  ]
+  controller "my_controller"
+}
+Transform {
+  translation 0.5 0.05 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Sphere {
+        radius 0.05
+      }
+    }
+  ]
+}
